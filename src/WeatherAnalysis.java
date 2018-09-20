@@ -28,7 +28,14 @@ public class WeatherAnalysis {
                 daysAbove++;
             }
         }
+        sort(daysAbove, data);
+    }
+    public static void sort(int daysAbove, int[] data) {
         System.out.println(daysAbove + " days were above average.");
-        System.out.println("Temperatures: " + Arrays.toString(data)); //Print the entire populated array
+        System.out.println("\nTemperatures: " + Arrays.toString(data)); //Print the entire populated array
+        Arrays.sort(data); //Sorts array in least to greatest order
+        int max = data[data.length - 1], max1 = data[data.length - 2], min = data[0], min1 = data[1]; //declares int variables for max and min values
+        System.out.println("Two coldest days: " + min + ", " + min1);
+        System.out.println("Two hottest days: " + max + ", " + max1);
     }
 }
