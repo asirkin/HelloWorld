@@ -2,6 +2,9 @@
 import java.util.*;
 public class WeatherAnalysis {
     public static void main(String[] args) {
+        input();
+    }
+    public static void input() {
         Scanner input = new Scanner(System.in); //This scanner will take in all user input and later store them in variables
         System.out.print("How many days' temperatures? ");
         int days = input.nextInt();
@@ -12,6 +15,9 @@ public class WeatherAnalysis {
             data[i - 1] = input.nextInt(); //Store a given day's data in the index of that day - 1 in the array
             csum += data[i - 1]; //Add the value of each index to the cumulative sum
         }
+        traverse(days, csum, data);
+    }
+    public static void traverse (int days, int csum, int[] data) {
         double eday = days;
         double avg = csum / eday;
         avg = (Math.round(avg * 10.0)) / 10.0; //Round the average to the tenths place
@@ -23,5 +29,6 @@ public class WeatherAnalysis {
             }
         }
         System.out.println(daysAbove + " days were above average.");
+        System.out.println("Temperatures: " + Arrays.toString(data)); //Print the entire populated array
     }
 }
