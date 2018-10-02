@@ -7,19 +7,11 @@ public class ArrayPractice {
         System.out.println("What range of numbers would you prefer? ");
         int y = input.nextInt();
         int[] array = new int[x]; //initialize array of size user specifies
-        Random rand = new Random(); //Create random object
-        for(int i = 0; i <= x - 1; i++) { //For loop runs for size of array
-            int num = rand.nextInt(y) + 1; //Populates array within range of user input
+        for(int i = 0; i <= array.length - 1; i++) { //For loop runs for size of array
+            double num1 = Math.random() * (y - 0); //Populates array within range of user input
+            int num = (int)(num1);
             array[i] = num; //modifies index of 'i' within array
         }
         System.out.println(Arrays.toString(array)); //Use toString method to print entire array
-    }
-
-    public static void weather() {
-        //This method asks the user for
-        Scanner input = new Scanner(System.in);
-        System.out.println("How many days?");
-        int days = input.nextInt();
-
     }
 }
